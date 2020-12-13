@@ -14,6 +14,7 @@ function Home() {
 
 	useEffect(() => {
 		getMoviesRequest().then((res) => {
+
 			const moviesList = JSON.parse(localStorage.getItem('myfavmovies'));
 
 			setMovies(moviesList);

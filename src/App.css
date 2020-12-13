@@ -22,3 +22,11 @@
 .searchControl {
   font-size: calc(6px + 2vmin);
 }
+
+.buttonCollapse{
+  display: contents;
+}
+
+.loginItens {
+  display: flex;
+}

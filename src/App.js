@@ -22,21 +22,24 @@ import Nav from 'react-bootstrap/Nav';
 function App() {
   return (
     <Router>
-      <Navbar bg="dark" variant="dark" expand="md">
+      <Navbar bg="dark" variant="dark" expand="lg">
+        {/* <Navbar bg="light" variant="light" expand="lg"> */}
         <Container>
           <Navbar.Brand href="/">
             <img
               alt="logo"
               src={logo}
-              className="d-inline-block logo" />
+              // className="d-inline-block logo" />
+              className=" logo" />
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Toggle aria-controls="basic-navbar-nav" className="buttonCollapse" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ml-3">
               <Nav.Link href="/">Home</Nav.Link>
               <Nav.Link href="/fav">Favorites</Nav.Link>
             </Nav>
-            <Navbar.Collapse className="justify-content-end">
+
+            <Navbar.Collapse className="d-sm-flex justify-content-end">
               <Navbar.Text>
                 {
                   isUserLogged ?

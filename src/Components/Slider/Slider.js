@@ -30,7 +30,6 @@ function MovieSlider(props) {
 					placement="bottom"
 					overlay={
 						<Tooltip id={`tooltip-right`} className="mt-2">
-							{/* Tooltip on <strong>right</strong>. */}
 							<AddFavourites />
 						</Tooltip>
 					}
@@ -47,66 +46,6 @@ function MovieSlider(props) {
 					</div>
 				</OverlayTrigger>
 			))}
-			{/* <div className="card-wrapper">
-				<div className="card">
-					<div className="card-image">
-						<img src="images/14.jpg" alt="Card" />
-					</div>
-					<ul class="social-icons">
-						<li>
-							<a href="/">
-								<i className="fa fa-facebook"></i>
-								<i className="fa fa-instagram"></i>
-								<i className="fa fa-twitter"></i>
-								<i className="fa fa-dribbble"></i>
-							</a>
-						</li>
-					</ul>
-					<div className="details">
-						<h2>Movie <span class="job-title">App</span></h2>
-					</div>
-				</div>
-			</div>
-			<div className="card-wrapper">
-				<div className="card">
-					<div className="card-image">
-						<img src="images/15.jpg" alt="Card" />
-					</div>
-					<ul class="social-icons">
-						<li>
-							<a href="/">
-								<i className="fa fa-facebook"></i>
-								<i className="fa fa-instagram"></i>
-								<i className="fa fa-twitter"></i>
-								<i className="fa fa-dribbble"></i>
-							</a>
-						</li>
-					</ul>
-					<div className="details">
-						<h2>Movie <span class="job-title">App</span></h2>
-					</div>
-				</div>
-			</div>
-			<div className="card-wrapper"> 
-				<div className="card">
-					<div className="card-image">
-						<img src="images/11.jpg" alt="Card" />
-					</div>
-					<ul class="social-icons">
-						<li>
-							<a href="/">
-								<i className="fa fa-facebook"></i>
-								<i className="fa fa-instagram"></i>
-								<i className="fa fa-twitter"></i>
-								<i className="fa fa-dribbble"></i>
-							</a>
-						</li>
-					</ul>
-					<div className="details">
-						<h2>Movie <span className="job-title">App</span></h2>
-					</div>
-				</div>
-			</div>*/}
 		</Slider>
 	);
 };
