@@ -2,49 +2,40 @@ import React, { useState, useEffect } from 'react';
 
 import '../Home/Home.css'
 
+import { getMoviesRequest, newMovies } from '../../Controller/MoviesList';
 import Slider from '../Slider/Slider';
 
 import Container from 'react-bootstrap/Container';
 
-import { getMoviesRequest, newMovies } from '../../Controller/MoviesList';
 
 function Home() {
+	let title = "Recommendations";
 
 	const [movies, setMovies] = useState([]);
 
 	useEffect(() => {
-		getMoviesRequest().then((res) => {
-
-			const moviesList = JSON.parse(localStorage.getItem('myfavmovies'));
-
-			setMovies(moviesList);
-		});
-	}, []);
-
-	useEffect(() => {
 		let myNewMovies = [];
 
-		if (newMovies.length > 0 && "_id" in newMovies) {
-			myNewMovies = newMovies;
-		} else {
-			for (let i = 0; i < newMovies.length; i++) {
-				myNewMovies.push(
-					{
-						"_id": newMovies[i].imdbID,
-						"title": newMovies[i].Title,
-						"release_date": newMovies[i].Year,
-						"image_url": newMovies[i].Poster,
-					}
-				);
-			}
-		}
+		getMoviesRequest().then((res) => {
+			const moviesList = JSON.parse(localStorage.getItem('myfavmovies'));
 
-		setMovies(myNewMovies);
+			if (moviesList.length > 0) {
+				myNewMovies = moviesList;
+			} else {
+				myNewMovies = null;
+			}
+
+			setMovies(myNewMovies);
+		}).catch((e) => {
+			console.log(e);
+			myNewMovies = null;
+			setMovies(myNewMovies);
+		});
 	}, [newMovies]);
 
 	return (
 		<Container>
-			<Slider movies={movies} />
+			<Slider title={title} movies={movies} />
 		</Container>
 	);
 };

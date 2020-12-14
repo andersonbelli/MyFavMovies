@@ -35,7 +35,7 @@ function FavMovies(props) {
 
 	return (
 		<Container>
-			<Slider movies={movies} />
+			<Slider title={props.title} movies={movies} />
 		</Container>
 	);
 };

@@ -1,13 +1,7 @@
 /* Header */
-@media (prefers-reduced-motion: no-preference) {
-  .logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .logo {
-  height: 6.7vmin;
-  min-height: 50%;
+  height: 7vmin;
+  min-height: 100%;
   pointer-events: none;
 }
 
