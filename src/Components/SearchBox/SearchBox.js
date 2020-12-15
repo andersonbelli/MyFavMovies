@@ -34,7 +34,7 @@ function SearchBox() {
 	}, [isLoading]);
 
 	return (
-		<form className="ml-lg-3">
+		<form className="ml-lg-3" id="searchForm">
 			<input id="search" type="search" placeholder="Search..." ref={searchBoxValue} defaultValue="avengers" />
 			<Button className="button" disabled={isLoading} variant="outline-warning"
 				onClick=

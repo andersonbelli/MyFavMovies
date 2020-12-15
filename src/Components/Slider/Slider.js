@@ -32,7 +32,7 @@ function MovieSlider(props) {
 			{ props.movies != null ?
 				<Row className="align-self-center w-100">
 					<Col className="mx-auto">
-						{props.title != undefined ? <h1 className="lead w-25">{props.title}</h1> : null}
+						{props.title !== undefined ? <h1 className="lead w-25">{props.title}</h1> : null}
 						<Slider {...settings}>
 							{
 								props.movies.map((movies, _) => (
@@ -62,7 +62,7 @@ function MovieSlider(props) {
 					</Col>
 				</Row>
 				:
-				props.title == "Search" ?
+				props.title === "Search" ?
 					<Row className="align-self-center w-100">
 						<Col className="mx-auto">
 							<Jumbotron className="text-center bg-white text-dark">

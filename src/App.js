@@ -14,8 +14,8 @@ import { useHistory } from 'react-router-dom';
 import Home from './Components/Home/Home';
 import FavMovies from './Components/FavMovies';
 import SearchBox from './Components/SearchBox/SearchBox';
-import Login from './Components/Login/Login';
 import SearchPage from './Components/SearchPage/SearchPage';
+import Auth from "./Components/auth/AuthPages";
 
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
@@ -27,13 +27,11 @@ function App() {
   return (
     <Router>
       <Navbar bg="dark" variant="dark" expand="lg">
-        {/* <Navbar bg="light" variant="light" expand="lg"> */}
         <Container>
           <Navbar.Brand href="/">
             <img
               alt="logo"
               src={logo}
-              // className="d-inline-block logo" />
               className=" logo" />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" className="buttonCollapse" />
@@ -51,7 +49,7 @@ function App() {
                     <div>
                       <a className="px-2" href="/user/login">Login</a>
                       |
-                      <a className="px-2" href="/user/signup">SignUp</a>
+                      <a className="px-2" href="/user/register">SignUp</a>
                     </div>
                 }
               </Navbar.Text>
@@ -66,7 +64,7 @@ function App() {
         <Route exact path="/" component={props => <Home title="Recommendations">{props.children}</Home>} />
         <Route exact path="/search" component={props => <SearchPage title="SearchApp">{props.children}</SearchPage>} />
         <Route path="/fav" component={props => <FavMovies title="Favorites">{props.children}</FavMovies>} />
-        <Route path="/user" component={Login} />
+        <Route path="/user" component={Auth} />
         {/* <PrivateRoute path="/protected">
               <ProtectedPage />
             </PrivateRoute> */}
