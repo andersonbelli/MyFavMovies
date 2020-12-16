@@ -9,21 +9,19 @@ import logo from '../src/assets/logo.png';
 import { isUserLogged } from './env_variables';
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { useHistory } from 'react-router-dom';
 
 import Home from './Components/Home/Home';
-import FavMovies from './Components/FavMovies';
+import FavMovies from './Components/FavMovies/FavMovies';
 import SearchBox from './Components/SearchBox/SearchBox';
 import SearchPage from './Components/SearchPage/SearchPage';
 import Auth from "./Components/auth/AuthPages";
+import NotFound from "./Components/NotFound";
 
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 
 function App() {
-  const history = useHistory();
-
   return (
     <Router>
       <Navbar bg="dark" variant="dark" expand="lg">
@@ -65,6 +63,7 @@ function App() {
         <Route exact path="/search" component={props => <SearchPage title="SearchApp">{props.children}</SearchPage>} />
         <Route path="/fav" component={props => <FavMovies title="Favorites">{props.children}</FavMovies>} />
         <Route path="/user" component={Auth} />
+        <Route path="*" component={NotFound} />
         {/* <PrivateRoute path="/protected">
               <ProtectedPage />
             </PrivateRoute> */}

@@ -2,6 +2,7 @@ import React from "react";
 
 import Login from "./Login/Login";
 import Register from "./Register/Register";
+import NotFound from "../NotFound";
 
 const components = {
 	"login": Login,
@@ -9,8 +10,7 @@ const components = {
 };
 
 function Auth(props) {
-
-	let MyRedirect = components["login"];
+	let MyRedirect = NotFound;
 
 	if (props.location.pathname === "/user/register") {
 		MyRedirect = components["register"];
@@ -19,7 +19,7 @@ function Auth(props) {
 	}
 
 	return (
-		<MyRedirect></MyRedirect>
+		<MyRedirect />
 	);
 };
 

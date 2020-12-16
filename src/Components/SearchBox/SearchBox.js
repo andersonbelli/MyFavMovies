@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import './SearchBox.css';
 
-import { searchMovie } from '../../Controller/MoviesList';
+import { searchMovie } from '../../Controller/MoviesController';
 
 import Button from 'react-bootstrap/Button';
 
@@ -16,11 +16,10 @@ function SearchBox() {
 	const [isLoading, setLoading] = useState(false);
 
 	useEffect(() => {
-
 		if (isLoading) {
 			searchMovie(searchBoxValue.current.value.toString()).then((res) => {
 				if (res !== undefined) {
-					if (history.location.pathname == "/search") {
+					if (history.location.pathname === "/search") {
 						history.push({ pathname: '/search', search: `?s=${searchBoxValue.current.value}`, state: { searched: JSON.stringify(res) } });
 					} else {
 						history.replace({ pathname: '/search', search: `?s=${searchBoxValue.current.value}`, state: { searched: JSON.stringify(res) } });

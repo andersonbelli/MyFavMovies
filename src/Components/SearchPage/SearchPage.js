@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import Slider from '../Slider/Slider';
 
-import { searchMovie } from '../../Controller/MoviesList';
+import { searchMovie } from '../../Controller/MoviesController';
 
 import Container from 'react-bootstrap/Container';
 
@@ -14,7 +14,7 @@ function SearchPage() {
 
 	let title = "Search";
 
-	if (location.search != undefined) {
+	if (location.search !== undefined) {
 		title = location.search.substr(3).toUpperCase();
 	} else {
 		delete location.state;
@@ -41,7 +41,7 @@ function SearchPage() {
 
 	useEffect(() => {
 
-		if (location.state != undefined) {
+		if (location.state !== undefined) {
 			if (location.state.searched != null) {
 				setSearch(settingSearchedMovies(JSON.parse(location.state.searched)));
 			} else {

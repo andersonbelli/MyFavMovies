@@ -16,6 +16,7 @@ import Col from 'react-bootstrap/Col';
 
 
 import AddFavourites from '../AddFavourites/AddFavourites';
+import NotFound from "../NotFound";
 
 function MovieSlider(props) {
 	let settings = {
@@ -62,29 +63,7 @@ function MovieSlider(props) {
 					</Col>
 				</Row>
 				:
-				props.title === "Search" ?
-					<Row className="align-self-center w-100">
-						<Col className="mx-auto">
-							<Jumbotron className="text-center bg-white text-dark">
-								<h1>No movies found 😔</h1>
-								<Button variant="primary" onClick={() => {
-									window.location.replace("/");
-								}}>Back to login</Button>
-							</Jumbotron>
-						</Col>
-					</Row>
-					:
-					<Row className="align-self-center w-100">
-						<Col className="mx-auto">
-							<Jumbotron className="text-center bg-white text-dark">
-								<h1>Nothing to see here 🤔</h1>
-								<p>Try to reload the list of movies</p>
-								<Button variant="primary" onClick={() => {
-									window.location.reload();
-								}}>Reload</Button>
-							</Jumbotron>
-						</Col>
-					</Row>
+				<NotFound headerMessage="No movies found 😔" message="" />
 			}
 		</Container >
 	);

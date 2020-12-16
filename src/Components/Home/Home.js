@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import '../Home/Home.css'
 
-import { getMoviesRequest, newMovies } from '../../Controller/MoviesList';
+import { getMoviesRequest, newMovies } from '../../Controller/MoviesController';
 import Slider from '../Slider/Slider';
 
 import Container from 'react-bootstrap/Container';

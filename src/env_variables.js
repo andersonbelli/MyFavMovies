@@ -8,6 +8,9 @@ export { BASE_URL };
 const MOVIES = "movies";
 export { MOVIES };
 
+const USER = "user";
+export { USER };
+
 // OMDBapi
 
 const BASE_URL_OMDB = "http://www.omdbapi.com/?apikey=448f288b";
